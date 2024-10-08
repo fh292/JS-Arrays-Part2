@@ -48,8 +48,7 @@ console.log(addLailaToArray(instructors));
  */
 const teams = ["Brazil", "Germany", "Italy"];
 function eliminateTeam(teams) {
-  teams.pop();
-  return teams;
+  return teams.pop();
 }
 console.log(eliminateTeam(teams));
 
