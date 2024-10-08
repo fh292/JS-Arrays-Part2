@@ -35,8 +35,9 @@ console.log(isArrayLengthEven([1, 2, 3, 4]));
  */
 const instructors = ["Mshary", "Hasan"];
 function addLailaToArray(instructors) {
-  instructors.push("Laila");
-  return instructors;
+  const newInstructors = instructors.slice(0);
+  newInstructors.push("Laila");
+  return newInstructors;
 }
 console.log(addLailaToArray(instructors));
 
@@ -62,9 +63,7 @@ const fruits = ["apple", "orange", "banana", "kiwi", "mango"];
 function secondHalfOfArrayIfItIsEven(fruits) {
   if (fruits.length % 2 === 0) {
     return fruits.slice(fruits.length / 2);
-  } else {
-    return [];
-  }
+  } else return [];
 }
 console.log(secondHalfOfArrayIfItIsEven(fruits));
 
@@ -73,4 +72,9 @@ console.log(secondHalfOfArrayIfItIsEven(fruits));
  * - receives a string `shout`
  * - returns the string `shout` with at most one exclamation mark (!) at the end.
  */
-function youGottaCalmDown(shout) {}
+function youGottaCalmDown(shout) {
+  const firstExclamation = shout.indexOf("!");
+  if (firstExclamation === -1) return shout;
+  return shout.slice(0, firstExclamation + 1);
+}
+console.log(youGottaCalmDown("HI!!!!!!!!!!"));
